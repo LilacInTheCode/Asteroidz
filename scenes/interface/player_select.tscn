@@ -1,0 +1,167 @@
+[gd_scene load_steps=4 format=3 uid="uid://bv2ywcoblddgw"]
+
+[ext_resource type="Theme" uid="uid://bt4v1vg7wddhx" path="res://assets/themes/space_theme.tres" id="1_17lit"]
+[ext_resource type="Script" path="res://scripts/player_select.gd" id="1_my0kk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h67w0"]
+bg_color = Color(0.180392, 0.180392, 0.180392, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.239216, 0.239216, 0.239216, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_my0kk")
+
+[node name="Menu" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -47.0
+offset_right = 53.0
+offset_bottom = 53.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h67w0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="MenuGrid" type="GridContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="Player1Box" type="PanelContainer" parent="Menu/VBoxContainer/MenuGrid"]
+visible = false
+modulate = Color(0.207843, 0.207843, 0.207843, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Menu/VBoxContainer/MenuGrid/Player1Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player1Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Player 1"
+
+[node name="DetectedText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player1Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "DETECTED"
+
+[node name="Player2Box" type="PanelContainer" parent="Menu/VBoxContainer/MenuGrid"]
+visible = false
+modulate = Color(0.2, 0.2, 0.2, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Menu/VBoxContainer/MenuGrid/Player2Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player2Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Player 2"
+
+[node name="DetectedText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player2Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "DETECTED"
+
+[node name="Player3Box" type="PanelContainer" parent="Menu/VBoxContainer/MenuGrid"]
+visible = false
+modulate = Color(0.2, 0.2, 0.2, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Menu/VBoxContainer/MenuGrid/Player3Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player3Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Player 3"
+
+[node name="DetectedText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player3Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "DETECTED"
+
+[node name="Player4Box" type="PanelContainer" parent="Menu/VBoxContainer/MenuGrid"]
+visible = false
+modulate = Color(0.2, 0.2, 0.2, 1)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="Menu/VBoxContainer/MenuGrid/Player4Box"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player4Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "Player 4"
+
+[node name="DetectedText" type="Label" parent="Menu/VBoxContainer/MenuGrid/Player4Box/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "DETECTED"
+
+[node name="HBoxContainer" type="PanelContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menu/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("1_17lit")
+text = "Press a button to join"
+fit_content = true
+autowrap_mode = 0
+
+[node name="Label" type="RichTextLabel" parent="Menu/VBoxContainer/HBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme = ExtResource("1_17lit")
+text = "Press trigger to begin
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0

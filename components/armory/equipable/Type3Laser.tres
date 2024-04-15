@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Armament" load_steps=3 format=3 uid="uid://c5ukd05rrmbcw"]
+
+[ext_resource type="PackedScene" uid="uid://b8oitnqj0rf4i" path="res://scenes/entities/laser_bolt.tscn" id="1_4bxiy"]
+[ext_resource type="Script" path="res://components/armory/Armament.cs" id="1_yknvj"]
+
+[resource]
+script = ExtResource("1_yknvj")
+damageRange = Vector2(1, 3)
+baseAmmoCost = 1.0
+chargeCapacity = 3.0
+chargeMultiplier = 1.5
+ammoType = ExtResource("1_4bxiy")
+color = Color(0.964706, 0, 0.164706, 1)
+equipmentSlot = "canon"
+readableName = "Type III Laser Canon"
+livesRemainingEffect = 0.0
+baseHPEffect = 0.0
+currentHPEffect = 0.0
+baseEnergyEffect = 0.0
+currentEnergyEffect = 0.0

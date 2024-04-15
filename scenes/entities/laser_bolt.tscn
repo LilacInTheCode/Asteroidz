@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://b8oitnqj0rf4i"]
+
+[ext_resource type="Script" path="res://scripts/laser_bolt.gd" id="1_wxc8t"]
+[ext_resource type="Texture2D" uid="uid://r4hgmj8ky13l" path="res://assets/2d/laser_bolt.png" id="2_iji1v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gimcb"]
+radius = 3.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_45n2p"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv6ha"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72ujs"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bafnr"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kaf3"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wslii"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2v7m"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7104x"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0y2r"]
+atlas = ExtResource("2_iji1v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a5kcb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_45n2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv6ha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72ujs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv6ha")
+}],
+"loop": true,
+"name": &"charging",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bafnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kaf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wslii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2v7m")
+}],
+"loop": false,
+"name": &"destroy",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7104x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0y2r")
+}],
+"loop": true,
+"name": &"traveling",
+"speed": 12.0
+}]
+
+[node name="LaserBolt" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+gravity_scale = 0.0
+script = ExtResource("1_wxc8t")
+
+[node name="LaserCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_gimcb")
+
+[node name="LaserSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a5kcb")
+animation = &"charging"
+frame = 3
+frame_progress = 1.0

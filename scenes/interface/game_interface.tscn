@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://bixg1kv42s4e1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cc2rx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="GameInterface" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="InterfaceMargins" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 32
+
+[node name="PilotDock" type="PanelContainer" parent="InterfaceMargins"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_cc2rx")
+
+[node name="PilotRow" type="HBoxContainer" parent="InterfaceMargins/PilotDock"]
+layout_mode = 2

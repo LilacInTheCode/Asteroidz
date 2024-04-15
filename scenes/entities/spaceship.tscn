@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1s4ex0jdt3o8"]
+
+[ext_resource type="Script" path="res://scripts/spaceship.gd" id="1_ct0ij"]
+[ext_resource type="SpriteFrames" uid="uid://bi1d5xf7bngf2" path="res://entities/fighter/fighter.tres" id="2_giu7i"]
+[ext_resource type="Script" path="res://scripts/loadout.gd" id="3_gt00r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_me6tf"]
+radius = 9.0
+height = 28.0
+
+[sub_resource type="Curve" id="Curve_s1cxi"]
+_data = [Vector2(0.295374, 0.320755), 0.0, 0.0, 0, 0, Vector2(0.626334, 0.632075), 0.0, 0.0, 0, 0, Vector2(0.868327, 0.386792), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[node name="Spaceship" type="RigidBody2D"]
+mass = 20.0
+gravity_scale = 0.0
+script = ExtResource("1_ct0ij")
+
+[node name="ShipSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -2)
+sprite_frames = ExtResource("2_giu7i")
+animation = &"exploding"
+frame = 6
+frame_progress = 1.0
+
+[node name="ShipCollision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_me6tf")
+
+[node name="PortLaser" type="RemoteTransform2D" parent="."]
+position = Vector2(12, 0)
+update_scale = false
+
+[node name="StarboardLaser" type="RemoteTransform2D" parent="."]
+position = Vector2(-12, 0)
+
+[node name="ForwardLaser" type="RemoteTransform2D" parent="."]
+position = Vector2(0, -14)
+
+[node name="Loadout" type="Node" parent="."]
+script = ExtResource("3_gt00r")
+
+[node name="PlayerStripe" type="Line2D" parent="."]
+visible = false
+top_level = true
+points = PackedVector2Array(-10, -20, 10, -20, 20, 0, 10, 20, -10, 20, -20, 0)
+closed = true
+width = 4.0
+width_curve = SubResource("Curve_s1cxi")
+default_color = Color(1, 1, 1, 0.494118)

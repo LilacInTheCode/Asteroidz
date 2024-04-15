@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bdl0srugnapj7"]
+
+[ext_resource type="Script" path="res://components/statable/Statable.cs" id="1_i22lb"]
+
+[node name="Statable" type="Node"]
+script = ExtResource("1_i22lb")
+stat = 1

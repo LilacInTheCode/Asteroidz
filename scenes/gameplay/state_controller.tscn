@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwpco13elu32i"]
+
+[ext_resource type="Script" path="res://scripts/state_controller.gd" id="1_bdsv8"]
+
+[node name="StateController" type="Node"]
+script = ExtResource("1_bdsv8")

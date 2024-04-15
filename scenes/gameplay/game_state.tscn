@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4e5i43jy6v1v"]
+
+[ext_resource type="Script" path="res://scripts/game_state.gd" id="1_dilog"]
+[ext_resource type="PackedScene" uid="uid://bixg1kv42s4e1" path="res://scenes/interface/game_interface.tscn" id="2_2s85o"]
+[ext_resource type="Script" path="res://components/armory/ArmoryComponent.cs" id="3_c32te"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yn2un"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="GameState" type="Node"]
+script = ExtResource("1_dilog")
+
+[node name="GameInterface" parent="." instance=ExtResource("2_2s85o")]
+
+[node name="InterfaceMargins2" type="MarginContainer" parent="GameInterface"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 32
+
+[node name="PilotDock" type="PanelContainer" parent="GameInterface/InterfaceMargins2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("StyleBoxFlat_yn2un")
+
+[node name="PilotRow" type="HBoxContainer" parent="GameInterface/InterfaceMargins2/PilotDock"]
+layout_mode = 2
+
+[node name="ArmoryComponent" type="Node" parent="."]
+script = ExtResource("3_c32te")
+armoryDirectory = "res://components/armory/equipable"

@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://bpv6opu1cv4t5"]
+
+[ext_resource type="Script" path="res://scripts/interface.gd" id="1_igex4"]
+[ext_resource type="Texture2D" uid="uid://ci3wr1d6slsg0" path="res://assets/2d/ship_sil.png" id="2_c3bd0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1u33t"]
+texture = ExtResource("2_c3bd0")
+
+[sub_resource type="LabelSettings" id="LabelSettings_07qho"]
+font_size = 12
+font_color = Color(0, 1, 0, 1)
+
+[sub_resource type="SystemFont" id="SystemFont_lncod"]
+subpixel_positioning = 0
+
+[sub_resource type="LabelSettings" id="LabelSettings_sqq3o"]
+font = SubResource("SystemFont_lncod")
+font_color = Color(1, 1, 0.337255, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_66ivu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nr0e3"]
+font_color = Color(0.501961, 0.721569, 1, 1)
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_igex4")
+
+[node name="ShipLoadout" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -74.0
+offset_right = 138.0
+offset_bottom = -10.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_1u33t")
+
+[node name="StarboardArm" type="Label" parent="ShipLoadout"]
+layout_mode = 2
+offset_left = 20.0
+offset_top = -4.0
+offset_right = 104.0
+offset_bottom = 16.0
+text = "[Disengaged]"
+label_settings = SubResource("LabelSettings_07qho")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ForwardArm" type="Label" parent="ShipLoadout"]
+layout_mode = 2
+offset_left = 29.0
+offset_top = 12.0
+offset_right = 113.0
+offset_bottom = 32.0
+text = "[Disengaged]"
+label_settings = SubResource("LabelSettings_07qho")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="PortArm" type="Label" parent="ShipLoadout"]
+layout_mode = 2
+offset_left = 39.0
+offset_top = 28.0
+offset_right = 124.0
+offset_bottom = 48.0
+text = "[Disengaged]"
+label_settings = SubResource("LabelSettings_07qho")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ShipCount" type="Label" parent="ShipLoadout"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = -22.0
+offset_right = 80.0
+offset_bottom = 1.0
+grow_vertical = 0
+text = "x0"
+label_settings = SubResource("LabelSettings_sqq3o")
+
+[node name="LevelState" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -59.0
+offset_right = -22.0
+offset_bottom = -19.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_66ivu")
+
+[node name="StageCounter" type="Label" parent="LevelState"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -29.0
+offset_right = -9.0
+offset_bottom = -6.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Stage 0"
+label_settings = SubResource("LabelSettings_nr0e3")

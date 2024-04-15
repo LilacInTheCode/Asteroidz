@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ShipModule" load_steps=2 format=3 uid="uid://bql372tg1nwem"]
+
+[ext_resource type="Script" path="res://components/armory/ShipModule.cs" id="1_o0h81"]
+
+[resource]
+script = ExtResource("1_o0h81")
+equipmentSlot = "none"
+readableName = "Basic Reactor"
+livesRemainingEffect = 0.0
+baseHPEffect = 0.0
+currentHPEffect = 0.0
+baseEnergyEffect = 10.0
+currentEnergyEffect = 0.0

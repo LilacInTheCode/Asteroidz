@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwont7mfeus4x"]
+
+[ext_resource type="Script" path="res://scripts/playfield.gd" id="1_n32g6"]
+[ext_resource type="PackedScene" uid="uid://b1i53sfmvu444" path="res://scenes/gameplay/asteroid_spawner.tscn" id="2_ookjq"]
+
+[node name="Playfield" type="Node2D"]
+script = ExtResource("1_n32g6")
+
+[node name="SpawnTimer" parent="." instance=ExtResource("2_ookjq")]
+
+[node name="Backdrop" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0

@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwj6qdfd7q20h"]
+
+[ext_resource type="Script" path="res://entities/fighter/fighter.gd" id="1_iypgu"]
+[ext_resource type="SpriteFrames" uid="uid://bi1d5xf7bngf2" path="res://entities/fighter/fighter.tres" id="2_hmd2x"]
+[ext_resource type="PackedScene" uid="uid://b8oitnqj0rf4i" path="res://scenes/entities/laser_bolt.tscn" id="2_q0mhn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0hvfo"]
+
+[node name="Fighter" type="Area2D" node_paths=PackedStringArray("primary_attack", "secondary_attack")]
+script = ExtResource("1_iypgu")
+primary_attack = [NodePath("PortAttach"), NodePath("StarAttach")]
+secondary_attack = [NodePath("NoseAttach")]
+primary_fire = ExtResource("2_q0mhn")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_hmd2x")
+animation = &"flying"
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_0hvfo")
+
+[node name="PortAttach" type="RemoteTransform2D" parent="."]
+position = Vector2(12, 0)
+update_scale = false
+
+[node name="StarAttach" type="RemoteTransform2D" parent="."]
+position = Vector2(-12, 0)
+update_scale = false
+
+[node name="NoseAttach" type="RemoteTransform2D" parent="."]
+position = Vector2(0, -12)
+update_scale = false
